@@ -10,9 +10,10 @@ class Language extends GetView<LocalController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      padding: const EdgeInsets.all(15),
+        body: Center(
+      // padding: const EdgeInsets.all(15),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "1".tr,

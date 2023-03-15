@@ -12,17 +12,17 @@ class Onboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(OnboardingControllerImp());
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         top: true,
-        minimum: const EdgeInsets.only(top: 50),
+        minimum: EdgeInsets.only(top: 50),
         child: Column(
           children: [
-            const Expanded(flex: 3, child: CustomSliderOnboarding()),
+            Expanded(flex: 3, child: CustomSliderOnboarding()),
             Expanded(
               flex: 1,
               child: Column(
-                children: const [
+                children: [
                   CustomDotsOnboarding(),
                   Spacer(
                     flex: 2,

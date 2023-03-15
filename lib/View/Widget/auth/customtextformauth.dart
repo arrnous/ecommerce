@@ -10,7 +10,7 @@ class CustomTextFormFeild extends StatelessWidget {
       required this.hintText,
       required this.labeText,
       required this.iconData,
-      this.myController});
+      required this.myController});
 
   @override
   Widget build(BuildContext context) {
