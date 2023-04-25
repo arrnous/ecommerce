@@ -1,10 +1,11 @@
 import 'package:ecommerce/Core/Constant/color.dart';
+import 'package:ecommerce/Core/Functions/validinput.dart';
 import 'package:ecommerce/View/Widget/auth/custombuttonauth.dart';
 import 'package:ecommerce/View/Widget/auth/customtextbody.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
-import '../../../Controller/Auth/checkemail.dart';
+import '../../../Controller/Auth/checkemail_controller.dart';
 import '../../Widget/auth/customtextformauth.dart';
 
 class CheckEmail extends StatelessWidget {
@@ -40,6 +41,9 @@ class CheckEmail extends StatelessWidget {
               height: 40,
             ),
             CustomTextFormFeild(
+              valid: (val) {
+                return validInput(val!, 5, 30, "email");
+              },
               myController: controller.email,
               hintText: 'Enter Your Email',
               iconData: Icons.email_outlined,
@@ -49,7 +53,7 @@ class CheckEmail extends StatelessWidget {
             CustomButtonAuth(
               text: "Check",
               onPressed: () {
-                controller.goToSuccessSignUp();
+                controller.goToVerifyCode();
               },
             ),
             const SizedBox(

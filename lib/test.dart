@@ -1,14 +1,27 @@
+/* import 'package:ecommerce/Core/Functions/checkinternet.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class test extends StatefulWidget {
-  const test({super.key});
+class Test extends StatefulWidget {
+  const Test({super.key});
 
   @override
-  State<test> createState() => _testState();
+  State<Test> createState() => _TestState();
 }
 
-class _testState extends State<test> {
+class _TestState extends State<Test> {
+  dynamic res;
+
+  initialdata() async {
+    res = await checkInternet();
+    debugPrint(res.toString());
+  }
+
+  @override
+  void initState() async {
+    initialdata();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +36,7 @@ class _testState extends State<test> {
               fieldWidth: 50,
               borderRadius: BorderRadius.circular(10),
               numberOfFields: 5,
-              borderColor: Color(0xFF512DA8),
+              borderColor: const Color(0xFF512DA8),
               //set to true to show as box or false to show as dash
               showFieldAsBox: true,
               //runs when a code is typed in
@@ -48,3 +61,4 @@ class _testState extends State<test> {
     );
   }
 }
+ */

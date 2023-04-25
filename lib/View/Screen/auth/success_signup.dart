@@ -1,12 +1,17 @@
 import 'package:ecommerce/View/Widget/auth/custombuttonauth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+
+import '../../../Controller/Auth/successsignup_controller.dart';
 
 class SuccessSignUp extends StatelessWidget {
   const SuccessSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SuccessSignUpControllerImp controller =
+        Get.put(SuccessSignUpControllerImp());
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -23,7 +28,9 @@ class SuccessSignUp extends StatelessWidget {
             Spacer(),
             CustomButtonAuth(
               text: "Login",
-              onPressed: () {},
+              onPressed: () {
+                controller.goToLogin();
+              },
             ),
             Spacer(),
           ],

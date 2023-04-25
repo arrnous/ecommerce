@@ -2,32 +2,33 @@ import 'package:ecommerce/Core/Constant/routes.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-abstract class ResetPasswordController extends GetxController {
-  ResetPass();
-  goToSuccessResetPass();
+abstract class CheckEmailController extends GetxController {
+  checkEmail();
+  goToVerifyCode();
 }
 
-class ResetPasswordControllerImp extends ResetPasswordController {
+class CheckEmailControllerImp extends CheckEmailController {
+  late TextEditingController email;
   late TextEditingController password;
-  late TextEditingController repassword;
-  @override
-  ResetPass() {}
 
   @override
-  goToSuccessResetPass() {
-    Get.offNamed(AppRoute.successResetPass);
+  checkEmail() {}
+
+  @override
+  goToVerifyCode() {
+    Get.offNamed(AppRoute.verifyCodeSignUp);
   }
 
   @override
   void onInit() {
-    repassword = TextEditingController();
+    email = TextEditingController();
     password = TextEditingController();
     super.onInit();
   }
 
   @override
   void dispose() {
-    repassword.dispose();
+    email.dispose();
     password.dispose();
 
     super.dispose();

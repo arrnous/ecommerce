@@ -1,8 +1,7 @@
 import 'package:ecommerce/Core/Localization/changelang.dart';
 import 'package:ecommerce/Core/Services/services.dart';
-import 'package:ecommerce/View/Screen/language.dart';
+import 'package:ecommerce/binding.dart';
 import 'package:ecommerce/routes.dart';
-import 'package:ecommerce/test.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -27,15 +26,11 @@ class MyApp extends StatelessWidget {
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: "Cairo",
-        textTheme: const TextTheme(
-          headlineMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        primarySwatch: Colors.blue,
-      ),
-      home: const Language(),
-      routes: routes,
+      theme: controller.appTheme,
+      initialBinding: MyBinding(),
+      // home: const Language(),
+      // routes: routes,
+      getPages: routes,
     );
   }
 }

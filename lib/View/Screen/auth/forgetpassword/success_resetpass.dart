@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../../../Controller/Auth/successresetpass_controller.dart';
 import '../../../Widget/auth/custombuttonauth.dart';
 
 class SuccessResetPass extends StatelessWidget {
@@ -6,11 +8,13 @@ class SuccessResetPass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SuccessResetPassControllerImp controller =
+        Get.put(SuccessResetPassControllerImp());
     return Scaffold(
       body: Center(
         child: Column(
           children: [
-            Spacer(),
+            const Spacer(),
             const Icon(
               Icons.check_circle_outline,
               size: 100,
@@ -19,12 +23,14 @@ class SuccessResetPass extends StatelessWidget {
               height: 50,
             ),
             const Text("............."),
-            Spacer(),
+            const Spacer(),
             CustomButtonAuth(
               text: "Login",
-              onPressed: () {},
+              onPressed: () {
+                controller.goToLogin();
+              },
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
